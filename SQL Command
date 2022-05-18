@@ -1,0 +1,3 @@
+$sql="";
+$result = mysqli_query($con2,$sql);
+$row= $result->fetch_assoc();
