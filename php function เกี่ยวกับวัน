@@ -15,3 +15,15 @@ function DateThai($strDate)
     $strDate = "2012-12-12";   //รับค่า
     echo DateThai($strDate);   // แสดงผล
     
+    
+  // คำนวนหาอายุ จากวัน
+  //date in mm/dd/yyyy format; or it can be in other formats as well
+$birthDate = $row2["birthdate"];
+//explode the date to get month, day and year
+$birthDate = explode("-", $birthDate);
+//get age from date or birthdate
+$age = (date("md", date("U", mktime(0, 0, 0, $birthDate[2], $birthDate[1], $birthDate[0]))) > date("md")
+  ? ((date("Y") - $birthDate[0]) - 1)
+  : (date("Y") - $birthDate[0]));
+echo "Age is:" . $age;
+
