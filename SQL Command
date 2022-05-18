@@ -1,7 +1,28 @@
-
-คำสั่ง Query PHP
+//คำสั่ง Query PHP
 
 $sql="";
 $result = mysqli_query($con2,$sql);
 $row= $result->fetch_assoc();
 &row["ชื่อฟิลด์"];
+
+
+
+
+
+
+// คำสั่ง insert PHP
+  <?php
+    if($_GET["idcard"]){
+    require_once ('DatabaseConfig.php');
+    $sql = "INSERT INTO user ";
+    $result = mysqli_query($con2,$sql);
+       if($result){
+         echo "<script language=\"JavaScript\">";
+         echo "alert('บันทึกข้อมูลของท่านเรียบร้อยแล้ว');window.location='index.php';";
+         echo "</script>";
+    }
+    else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    }
+    ?>
