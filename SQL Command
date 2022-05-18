@@ -1,3 +1,7 @@
+
+คำสั่ง Query PHP
+
 $sql="";
 $result = mysqli_query($con2,$sql);
 $row= $result->fetch_assoc();
+&row["ชื่อฟิลด์"];
